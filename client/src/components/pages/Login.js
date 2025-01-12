@@ -9,11 +9,13 @@ import "react-toastify/dist/ReactToastify.css";
 const loginUser = async (payload, setLoading, navigate) => {
   try {
     setLoading(true);
+    console.log("II")
     const response = await axios.post("http://localhost:8000/user/login", payload);
     toast.success("Login Successfully!", { position: "top-right" });
     localStorage.setItem("token", JSON.stringify(response.data.token));
     navigate("/dashboard");
   } catch (error) {
+    console.log(error)
     toast.error("Login failed! Please try again.", { position: "top-right" });
   } finally {
     setLoading(false);
