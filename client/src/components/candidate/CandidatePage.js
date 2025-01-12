@@ -1,4 +1,8 @@
 import React from 'react'
+import CandidateTable from "./CandidateTable"
+import SearchBar from '../searchBar/SearchBar'
+
+
 
 const CandidatePage = () => {
   return (
@@ -35,6 +39,7 @@ const CandidatePage = () => {
           <button className="add-button">Add Candidate</button>
         </div>
       </div>
+      
     </>
   )
 }

@@ -71,6 +71,9 @@
   justify-content: space-between;
   margin-bottom: 24px;
   gap: 16px;
+  width: 80%;
+  float: right;
+  /* margin-top: 2%; */
 }
 
 .filter-select {
@@ -134,6 +137,10 @@
 .table-container {
   border-radius: 8px;
   overflow: hidden;
+  width: 81%;
+  float: right;
+  margin-right: 10px;
+  /* margin-top: 2%; */
 }
 
 .table {

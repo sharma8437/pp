@@ -7,17 +7,19 @@ import users from "../../assets/icons/users.svg";
 import leave from "../../assets/icons/leave.svg";
 import SerachBar from "../searchBar/SearchBar";
 import "../../styels/DashboardStyle/sidebar.css";
-import Header from "./Header";
+import PATHS from '../../routings/PathConstent'; // Import path constants
+
 
 export  default function Sidebar() {
 
   const token=localStorage.getItem('token')
   if(!token){
-   window.location.href = "/login";
+    window.location.href = "/login";
   }
-
+  
   return (
     <>
+
       <div>
         <aside className="sidebar">
           <div className="sidebar-header">
@@ -29,14 +31,14 @@ export  default function Sidebar() {
             </Link>
           </div>
           <div>
-            <SerachBar />
+            <SerachBar paddingLeft="2px"/>
           </div>
 
           <nav className="sidebar-nav">
             <div>
               <h2 className="section-title">Recruitment</h2>
               <div className="nav-group">
-                <Link to="/candidates" className="nav-item">
+                <Link to={'/'} className="nav-item">
                   <img src={user} alt="Attendance Icon" className="icon" />
                   Candidates
                 </Link>
@@ -76,7 +78,6 @@ export  default function Sidebar() {
         </aside>
 
         <div>
-          <Header />
         </div>
       </div>
     </>

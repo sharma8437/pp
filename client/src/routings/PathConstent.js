@@ -7,6 +7,7 @@ const PATHS = {
     FORGOT_PASSWORD: '/forgot-password',
     PROFILE: '/profile',
     DASHBORAD:'/dashboard',
+    CANDIDATES: '/candidates',
   };
   
   export default PATHS;

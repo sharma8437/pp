@@ -1,32 +1,33 @@
 import React, { Suspense } from 'react';
 import { Route, Routes } from 'react-router-dom';
+import LayoutCandidate from '../components/candidate/LayoutCandidate.js';
 import PATHS from './PathConstent'; // Import path constants
 
-
-// Lazy load Login and Signup components
+// Lazy load components
 const Login = React.lazy(() => import('../components/pages/Login.js'));
 const Signup = React.lazy(() => import('../components/pages/Signup2.js'));  
-const Home = React.lazy(()=>import('../components/home/Home.js'))
-const ForgotPassword = React.lazy(()=>import('../components/pages/ForgotPassword.js'))
+const Home = React.lazy(() => import('../components/home/Home.js'));
+const ForgotPassword = React.lazy(() => import('../components/pages/ForgotPassword.js'));
 const Profile = React.lazy(() => import("../components/pages/Profile.js"));
-// eslint-disable-next-line import/first
-import Dashboard from "../components/pages/Sidebar";
-
-
-
+const Dashboard = React.lazy(() => import("../components/pages/Sidebar.js"));
+const CandidatePage = React.lazy(() => import("../components/candidate/CandidateTable.js"));
 
 const Routing = () => {
-
   return (
     <Suspense fallback={<div>Loading...</div>}>
       <Routes>
-      <Route path={PATHS.HOME} element={<Home />} />
+        <Route path={PATHS.HOME} element={<Home />} />
         <Route path={PATHS.LOGIN} element={<Login />} />
         <Route path={PATHS.SIGNUP} element={<Signup />} />
         <Route path={PATHS.FORGOT_PASSWORD} element={<ForgotPassword />} />
         <Route path={PATHS.PROFILE} element={<Profile />} />     
-        <Route path={PATHS.DASHBORAD} element={<Dashboard />} />     
-         </Routes>
+        
+        {/* Parent route with LayoutCandidate */}
+        <Route path={PATHS.DASHBOARD} element={<LayoutCandidate />}>
+          <Route index element={<CandidatePage />} /> 
+          {/* <Route path={PATHS.CANDIDATES} element={<CandidatePage />} /> */}
+        </Route>
+      </Routes>
     </Suspense>
   );
 };

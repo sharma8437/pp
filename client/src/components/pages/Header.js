@@ -39,7 +39,7 @@ export default function Header() {
   };
 
   return (
-    <div className="container">
+    <div className="">
       <div className="header">
         <h1 className="title">Candidates</h1>
         <div className="header-actions">

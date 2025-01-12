@@ -15,6 +15,9 @@ const registerUser = async (data, setLoading) => {
     const response = await axios.post('http://localhost:8000/user/register', data);
     toast.success('Registration Successful!', { position: 'top-right' });
     setLoading(false);
+    if(response.status==200){
+      navigator("/")
+    }
     return response.data;
   } catch (error) {
     toast.error('Registration Failed. Please try again.', { position: 'top-right' });

@@ -13,7 +13,7 @@ const loginUser = async (payload, setLoading, navigate) => {
     const response = await axios.post("http://localhost:8000/user/login", payload);
     toast.success("Login Successfully!", { position: "top-right" });
     localStorage.setItem("token", JSON.stringify(response.data.token));
-    navigate("/dashboard");
+    navigate("/");
   } catch (error) {
     console.log(error)
     toast.error("Login failed! Please try again.", { position: "top-right" });

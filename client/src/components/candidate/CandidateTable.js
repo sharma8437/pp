@@ -1,5 +1,6 @@
 import React from 'react'
 import {  MoreVertical } from "lucide-react";
+import CandidatePage from './CandidatePage';
 
 const CandidateTable = () => {
     const candidates = [
@@ -30,6 +31,7 @@ const CandidateTable = () => {
       ];
   return (
     <>
+      <CandidatePage />
     
     <div className="table-container">
         <table className="table">

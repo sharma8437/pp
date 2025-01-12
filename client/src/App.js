@@ -4,6 +4,8 @@ import Routing from './routings/Routes';
 // import { Toaster } from 'react-hot-toast';
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import CandidatePage from './components/candidate/CandidatePage';
+import LayoutCandidate from './components/candidate/LayoutCandidate';
 
 const App = () => {
   return (
@@ -28,8 +30,10 @@ const App = () => {
         theme="light"
       />
         <Routing />  
+       {/* <LayoutCandidate /> */}
     
       </Router>
+
 
       
     
